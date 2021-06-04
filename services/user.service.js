@@ -3,15 +3,6 @@ const User = require('../models/user')
 const Article = require('../models/article')
 
 
-module.exports = {
-    createUser,
-    removeUser,
-    updateUser,
-    getUserArticles,
-    getUser
-}
-
-
 async function createUser(data) {
     const existingUser = await User.findOne({nickname: data.nickname});
     if (existingUser) {
@@ -51,5 +42,14 @@ async function updateUser(userId, payload) {
         throw badRequest('User not exists')
     }
     return user;
+}
+
+
+module.exports = {
+    createUser,
+    removeUser,
+    updateUser,
+    getUserArticles,
+    getUser
 }
 

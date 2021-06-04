@@ -20,18 +20,6 @@ const updateUserSchema = Joi.object({
   role: Joi.string().valid('admin','writer','quest'),
 })
 
-module.exports = {
-  createUser,
-  updateUser,
-  removeUser,
-  getUserArticles,
-  getUser,
-  userSchema,
-  idSchema,
-  updateUserSchema
-};
-
-
 async function createUser(req, res, next) {
   try {
     const data = req.body
@@ -86,3 +74,13 @@ async function updateUser(req, res, next) {
       next(e)
   }
 }
+module.exports = {
+  createUser,
+  updateUser,
+  removeUser,
+  getUserArticles,
+  getUser,
+  userSchema,
+  idSchema,
+  updateUserSchema
+};

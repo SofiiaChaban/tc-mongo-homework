@@ -3,14 +3,6 @@ const Article = require('../models/article')
 const User = require('../models/user')
 
 
-module.exports = {
-    createArticle,
-    removeArticle,
-    updateArticle,
-    getArticle
-}
-
-
 async function createArticle(data) {
     const targetUser = await User.findOne({_id: data.owner});
     if (!targetUser) {
@@ -56,4 +48,12 @@ async function getArticle(filters) {
         throw badRequest('Articles not exist');
     }
     return articles;
+}
+
+
+module.exports = {
+    createArticle,
+    removeArticle,
+    updateArticle,
+    getArticle
 }

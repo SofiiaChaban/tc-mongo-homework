@@ -23,18 +23,6 @@ const articleSchema = Joi.object({
     category: Joi.string().valid('sport','game','history'),
   });
 
-
-  module.exports = {
-    createArticle,
-    updateArticle,
-    removeArticle,
-    getArticle,
-    articleSchema,
-    idSchema,
-    updateArticleSchema
-  };
-
-
   async function createArticle(req, res, next) {
     try {
       const data = req.body
@@ -78,3 +66,13 @@ const articleSchema = Joi.object({
         next(e);
     }
   }
+
+  module.exports = {
+    createArticle,
+    updateArticle,
+    removeArticle,
+    getArticle,
+    articleSchema,
+    idSchema,
+    updateArticleSchema
+  };
