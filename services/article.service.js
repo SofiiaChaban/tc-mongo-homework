@@ -43,7 +43,7 @@ async function updateArticle(articleId, payload) {
 }
 
 async function getArticle(filters) {
-    const articles = await Article.find(filters);
+    const articles = await Article.find(filters).populate('owner','firstname lastname');
     if(!articles.length){
         throw badRequest('Articles not exist');
     }

@@ -71,6 +71,7 @@ after that start updating document.
 I want to have possibility to search for articles using next filters **title, subtitle, description, owner, category,
 createdAt, updatedAt**. If I request endpoint without setting filter criteria, I should get all articles from database.
 (Also you should populate owner field)
+ USE **/articles/?title=...&subtitle=...&desription=...&owner=... and etc. yo filter articles
 
 * Using [Postman](https://www.getpostman.com/), and api endpoint **/articles/:articleId (DELETE)**,
 I want to have possibility to delete any article from database. (Don't forget to decrement ***numberOfArticles*** field for user that created this article)
